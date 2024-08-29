@@ -250,6 +250,7 @@ class _MapScreenState extends State<MapScreen> {
             ),
             children: [
               TileLayer(
+
                 urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
               ),
               MarkerLayer(markers: _markers),
@@ -257,7 +258,7 @@ class _MapScreenState extends State<MapScreen> {
           ),
           if (_isSearching)
             Positioned(
-              top: 10,
+              // top: 10,
               left: 10,
               right: 10,
               child: Container(
@@ -268,7 +269,7 @@ class _MapScreenState extends State<MapScreen> {
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black26,
-                      blurRadius: 10,
+                      blurRadius: 20,
                       offset: Offset(0, 4),
                     ),
                   ],
@@ -278,6 +279,7 @@ class _MapScreenState extends State<MapScreen> {
                     TextField(
                       controller: _searchController,
                       decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
                         hintText: 'Search location...',
                         prefixIcon: Icon(Icons.search),
                       ),
